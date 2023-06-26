@@ -20,6 +20,7 @@ const NavBar =()=>{
                 <Tabs to="/">Code for Interview</Tabs>
                 <Tabs to ="/all">All Users</Tabs>
                 <Tabs to="/add">Add User</Tabs>
+                
             </Toolbar>
         </Header>
     )

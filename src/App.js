@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import CodeForInterview from './components/CodeForInterview';
 import AddUser from './components/AddUser';
 import AllUsers from './components/AllUsers';
+import EditUser from './components/EditUser';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function App() {
         < Route path ="/" element={<CodeForInterview />} />
         < Route path ="/add" element={<AddUser />} />
         < Route path ="/all" element={<AllUsers />} />
+        < Route path ="/edit/:id" element={<EditUser />} />
         
       </Routes>
     </BrowserRouter>

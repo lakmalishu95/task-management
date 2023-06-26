@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addUser } from "../service/api";
+import { editUser } from "../service/api";
 import { useNavigate } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ const initialValues = {
     phone:''
 }
 
-const AddUser = () => {
+const EditUser = () => {
 
 
     const [user, setUser] = useState(initialValues);
@@ -33,8 +33,8 @@ const AddUser = () => {
         console.log(user)
     }
 
-    const addUserDetails = async () => {
-        await addUser(user);
+    const editUserDetails = async () => {
+        await editUser(user);
         navigate('/all');
     }
 
@@ -46,11 +46,11 @@ const AddUser = () => {
                 <Text onChange={(e) => onValueChange(e)} label="User Name" inputProps={{ inputMode: 'text'}} name="usename" ></Text>
                 <Text onChange={(e) => onValueChange(e)} label="Email" inputProps={{ inputMode: 'text'}} name="email" ></Text>
                 <Text onChange={(e) => onValueChange(e)} label="Phone" inputProps={{ inputMode: 'text'}} name="phone" ></Text>
-                <Button onClick={() => addUserDetails()} onChange={(e) => onValueChange(e)} variant="contained">Contained</Button>
+                <Button onClick={() => editUserDetails()} onChange={(e) => onValueChange(e)} variant="contained">Contained</Button>
                 
             </Tab>
         </FormGroup>
     )
 }
 
-export default AddUser;
+export default EditUser;
