@@ -18,8 +18,8 @@ const NavBar =()=>{
         <Header position="statistic">
             <Toolbar>
                 <Tabs to="/">Code for Interview</Tabs>
-                <Tabs to ="/all">All Users</Tabs>
-                <Tabs to="/add">Add User</Tabs>
+                <Tabs to ="/all">All Tasks</Tabs>
+                <Tabs to="/add">Add Task</Tabs>
                 
             </Toolbar>
         </Header>

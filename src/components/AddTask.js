@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addUser } from "../service/api";
+import { addTask } from "../service/api";
 import { useNavigate } from "react-router-dom";
 
 
@@ -17,24 +17,24 @@ const Text = styled(TextField)`
 
 const initialValues = {
     name:'',
-    usename:'',
+    taskname:'',
     email:'',
     phone:''
 }
 
-const AddUser = () => {
+const AddTask = () => {
 
 
-    const [user, setUser] = useState(initialValues);
+    const [task, setTask] = useState(initialValues);
     const navigate = useNavigate();
 
     const onValueChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
-        console.log(user)
+        setTask({ ...task, [e.target.name]: e.target.value });
+        console.log(task)
     }
 
-    const addUserDetails = async () => {
-        await addUser(user);
+    const addTaskDetails = async () => {
+        await addTask(task);
         navigate('/all');
     }
 
@@ -43,14 +43,14 @@ const AddUser = () => {
             <Tab>
                 <Typography variant="h4" color="initial">Register</Typography>
                 <Text onChange={(e) => onValueChange(e)} label="Name" inputProps={{ inputMode: 'text'}} name="name" ></Text>
-                <Text onChange={(e) => onValueChange(e)} label="User Name" inputProps={{ inputMode: 'text'}} name="usename" ></Text>
+                <Text onChange={(e) => onValueChange(e)} label="Task Name" inputProps={{ inputMode: 'text'}} name="taskrname" ></Text>
                 <Text onChange={(e) => onValueChange(e)} label="Email" inputProps={{ inputMode: 'text'}} name="email" ></Text>
                 <Text onChange={(e) => onValueChange(e)} label="Phone" inputProps={{ inputMode: 'text'}} name="phone" ></Text>
-                <Button onClick={() => addUserDetails()} onChange={(e) => onValueChange(e)} variant="contained">Contained</Button>
+                <Button onClick={() => addTaskDetails()} onChange={(e) => onValueChange(e)} variant="contained">Contained</Button>
                 
             </Tab>
         </FormGroup>
     )
 }
 
-export default AddUser;
+export default AddTask;
